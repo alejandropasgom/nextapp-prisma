@@ -2,12 +2,12 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-export default async (req, res) => {
+export default index = async (req, res) => {
   const { url } = req.body;
   const shortUrl = Math.random().toString(36).substring(2, 5);
 
   try {
-    const data = await prisma.link.create({
+    const data = prisma.link.create({
       data: { url, shortUrl },
     });
 
